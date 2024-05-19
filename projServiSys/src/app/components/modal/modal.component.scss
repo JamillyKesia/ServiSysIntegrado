@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap');
+@import 'variaveis.scss';
+
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #9494946E;
+  display: flex;
+  align-items: center;
+}
+
+.modal-body{
+  background-color: white;
+  border-radius: 18px;
+  margin: 15% auto;
+  border: 1px solid #D0C5C542;
+  width: 80%;
+  max-width: 550px;
+  box-shadow: 0px 4px 17px 0px #D0C5C542;
+  padding: 60px 20px;
+}
+
+.fechar {
+  color: $preto;
+  background-color: $branco;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  border: 1px solid $branco;
+}
+
+.fechar:hover,
+.fechar:focus {
+  color: $preto;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1{
+  font-family: DM Sans;
+  font-weight: 700;
+  line-height: 62.5px;
+  text-align: center;
+  color: $verde-claro;
+}
+
+p{
+  font-family: DM Sans;
+  font-size: 19px;
+  line-height: 24.74px;
+  text-align: center;
+}
+
+.submit{
+  background-color: $id-tabela;
+  color: $branco;
+  font-size: 18px;
+  padding: 8px 30px;
+  margin-left: 36%;
+  border-radius: 11px;
+  border: 1px solid $id-tabela;
+}
+
+#right-icon{
+  color: $verde-claro;
+  font-size: 50px;
+  display: block;
+  text-align: center;
+  padding: 30px 0px;
+}

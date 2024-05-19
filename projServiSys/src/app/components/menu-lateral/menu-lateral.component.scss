@@ -1,0 +1,91 @@
+@import 'variaveis';
+
+$h-servisys-logo: 120px;
+$h-menu-opcoes: 150px;
+$m-entre-menus: 10px;
+
+:host{
+    max-width: 300px;
+    min-height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .menu {
+        /* width: 19%;//294px;
+        height: 100%;
+        position: fixed;*/
+        flex:1;
+        flex-direction: column;
+        height: 100%;
+        padding: 0px 40px 0px 40px;
+        background: $degrade-esquerda;
+        text-align: center;
+        font-size:18px;
+     }
+
+     .image-container{
+        min-height: $h-servisys-logo;
+
+        img{
+            width: 80%;
+        }
+     }
+
+     .menu-container{
+        width: 100%; 
+          
+        &.opcoes{
+            min-height: $h-menu-opcoes;
+            flex-direction: column;
+            padding-top: 40px;
+
+            *{ //tds componentes dentro de opcoes
+                margin-bottom: $m-entre-menus;
+            }
+        }
+     }
+ 
+    .content {
+      margin-left: 250px; /* Ajuste o valor conforme a largura do menu */
+       padding: 20px;
+    }
+
+    &.active {
+        // Estilos para o botão ativo
+        background-color: #007bff; // Exemplo de cor de fundo diferente para o botão ativo
+        color: $branco; // Exemplo de cor de texto diferente para o botão ativo
+      }
+    
+    hr{
+        border: 1px solid $cor-linha;
+        width: 90%;
+        margin: 20px auto 0px auto;
+    }
+
+    .botao-selecionado {
+        background-color: yellow; /* Cor de destaque para o botão selecionado */
+      }
+    
+    /*@media screen and (max-width: 800px) {
+        .menu {
+            width: 200px;
+        }
+        .menu ul li {
+            padding: 5px;
+        }
+        .menu ul li a {
+            font-size: 14px;
+        }
+        .content {
+            margin-left: 100px;
+        }
+        .menu img{ //logo
+            width: 60%;
+            height: 5%;
+        }
+        
+    }*/
+     
+}
+

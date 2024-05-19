@@ -1,0 +1,8 @@
+<ul [ngClass]="{ 'selecionado': selecionado }" (click)="onClick()">
+    <li>
+        <!--<i class="fa-solid fa-list-check" style="color: #fff;"></i>-->
+        <ng-content></ng-content>
+        <a href="#">{{ descricao }}</a>
+    </li>
+</ul>
+

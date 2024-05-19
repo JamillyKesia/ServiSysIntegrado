@@ -1,0 +1,14 @@
+<!--<ul [class.seleiconado]="selecionado == true"
+    (click)="onClick()">
+    <li >
+        <ng-content></ng-content>
+        <a href="#">{{ descricao }}</a>
+    </li>
+</ul>-->
+
+<button type="button" [ngClass]="{ 'selecionado': selecionado }" (click)="onClick()">
+    <!--<i class="fa fa-plus-circle" aria-hidden="true"></i>-->
+    <i  [ngClass]="iconClass"></i>
+    <ng-content></ng-content>
+    <span>{{ descricao }}</span>
+</button>

@@ -1,0 +1,47 @@
+<div class="suas-ordens">
+    <table>
+        <thead>
+        <tr>
+            <td>ID da ordem</td>
+            <td>Status da ordem</td>
+            <td>Data da atribuição</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody *ngIf="ordens && ordens.length">
+            <tr *ngFor="let ordem of ordens "><!-- ordens$ | async-->
+
+                <td class="id">{{ ordem.id }}</td>
+
+                <td [ngClass]="{ 
+                    'green-background': ordem.estadoOrdemServico === 'Concluída',
+                    'yellow-background': ordem.estadoOrdemServico === 'Em andamento',
+                    'red-background': ordem.estadoOrdemServico === 'Rejeitado' }">
+                  {{ ordem.estadoOrdemServico }}
+                  <div class="bolinha"></div>
+                </td>
+
+                <td class="data">{{ ordem.dataOrdemServico }}</td>
+                
+                <td><button  (click)="openModel2()">{{ ordem.bt }}</button></td>
+
+            </tr>
+        </tbody>
+        <tfoot *ngIf="!ordens.length">
+            <tr>
+                <td colspan="8">
+                    <h4>
+                        Nenhuma ordem encontrada!
+                    </h4>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!--{{ordens | json}}-->
+
+    <div class="" *ngIf="modalSwitch">
+        <app-modal-os></app-modal-os>
+    </div>
+
+</div>

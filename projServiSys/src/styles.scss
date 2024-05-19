@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300&family=Fredoka:wght@300;400;500;600&family=Mukta&display=swap');
+
+*{
+    font-family: 'Epilogue', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Mukta', sans-serif;
+    box-sizing: border-box; //faz que o componente fique do tamanho dele e seja alterado dentro dele
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.flex{
+    display:flex;
+
+    &-center{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.titulo{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    line-height: 46px;
+    color: #022916;
+    display: block;
+    //font-style: normal;
+
+    &-bv{
+        @extend .titulo;
+        font-size: 25px;
+    }
+}
+
+.mt{
+    @for $i from 1 to 20{
+        &-#{ $i } {
+            margin-top: #{ $i }vh;
+    }
+}
+
+}

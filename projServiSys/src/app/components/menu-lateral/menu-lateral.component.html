@@ -1,0 +1,80 @@
+<nav class="menu">
+    <div class="image-container flex flex-center">
+        <img src="./assets/images/ServiSysLogoBranca.png" alt="logo ServiSys" [routerLink]="'/principal/home'">
+    </div> 
+    <hr class="linha">
+    <div class="menu-container flex opcoes">
+         <!-- Botões para funcionário -->
+        <app-botao-menu *ngIf="botao1FuncVisivel"
+        [selecionado]="botaoSelecionado === 'nova-ordem'"
+        [iconClass]="'fa fa-plus-circle'"
+        [descricao]="'    Nova ordem'"
+        (clicked)="onButtonClicked(); selecionarBotao('nova-ordem')"
+        [routerLink]="'/principal/nova-ordem'">
+        </app-botao-menu>
+
+        <app-botao-menu *ngIf="botao2FuncVisivel"
+        [selecionado]="botaoSelecionado === 'suas-ordens'"
+        [iconClass]="'fa fa-list'"
+        [descricao]="'    Suas ordens '"
+        (clicked)="onButtonClicked(); selecionarBotao('suas-ordens')"
+        [routerLink]="'/principal/suas-ordens'">
+        </app-botao-menu>
+
+        <!-- Botões para coordenador de TI -->
+        <app-botao-menu *ngIf="botao1CoordVisivel"
+        [selecionado]="botaoSelecionado === 'aprovacoes'"
+        [iconClass]="'fa fa-check'"
+        [descricao]="'    Aprovações pendentes   '"
+        (clicked)="onButtonClicked(); selecionarBotao('aprovacoes')"
+        [routerLink]="'/principal/aprovacoes'">
+        </app-botao-menu>
+
+        <app-botao-menu *ngIf="botao2CoordVisivel"
+        [selecionado]="botaoSelecionado === 'suas-aprovacoes'"
+        [iconClass]="'fa fa-list'"
+        [descricao]="'    Suas aprovações'"
+        (clicked)="onButtonClicked(); selecionarBotao('suas-aprovacoes')"
+        [routerLink]="'/principal/suas-aprovacoes'">
+        </app-botao-menu>
+
+        <!-- Botões para CPD -->
+        <app-botao-menu *ngIf="botao1CPDVisivel"
+        [selecionado]="botaoSelecionado === 'os-cpd'"
+        [iconClass]="'fa fa-check'"
+        [descricao]="'    Ordem de serviço'"
+        (clicked)="onButtonClicked(); selecionarBotao('os-cpd')"
+        [routerLink]="'/principal/os-cpd'">
+        </app-botao-menu>
+
+        <app-botao-menu *ngIf="botao2CPDVisivel"
+        [selecionado]="botaoSelecionado === 'manutencoes'"
+        [iconClass]="'fa fa-wrench '"
+        [descricao]="'    Suas manutenções'"
+        (clicked)="onButtonClicked(); selecionarBotao('manutencoes')"
+        [routerLink]="'/principal/manutencoes'">
+        </app-botao-menu>
+        
+        <!--fazendo junção dos dois códigos abaixo-->
+        <!--<app-botao-menu 
+        [descricao]="'Nova ordem'"
+        [selecionado]="menuSelecionado == 'Nova ordem'"
+        (click)="botaoClick('Nova ordem')"
+        >         
+        </app-botao-menu>
+        <app-botao-menu [descricao]="'Suas ordens'"
+        [selecionado]="menuSelecionado == 'Suas ordens'"
+        (click)="botaoClick('Suas ordens')"
+        >   
+        </app-botao-menu> --> 
+    </div>
+
+    <!--<div class="menu-container flex opcoes">
+        <ng-template [appBotaoMenuDirective]="userType">
+            <app-botao-menu [descricao]="'Nova ordem'" (clicked)="onButtonClicked('novaOrdem')"></app-botao-menu>
+        </ng-template>
+    </div>-->
+
+</nav>
+
+

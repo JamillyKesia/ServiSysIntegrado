@@ -1,0 +1,35 @@
+<div class="modal">
+    <div class="modal-body">
+      <button class="fechar" (click)="closeModal2()">X</button> <!--para o de ordens enviadar encaminhar o botão para ver ordens-->
+      <h3 class="OS">{{ ordemDeServico.id }}</h3>
+      <div class="local">
+        <p class="bold">Local de ocorrência:</p>
+        <p>{{ ordemDeServico.local }}</p>
+      </div>
+      <div class="data">
+        <p class="bold">Data da atribuição:</p>
+        <p>{{ ordemDeServico.data }}</p>
+      </div>
+      <div class="tipo">
+        <p class="bold">Tipo do equipamento:</p>
+        <p>{{ ordemDeServico.tipo }}</p>
+      </div>
+      <div class="status">
+        <p class="bold">Status:</p>
+        <p>{{ ordemDeServico.status }}</p>
+      </div>
+      <div class="posicao">
+        <p class="bold">Posição do equipamento:</p>
+        <p>{{ ordemDeServico.posicao }}</p>
+      </div>
+      <div class="serial">
+        <p class="bold">Serial do equipamento:</p>
+        <p>{{ ordemDeServico.serial }}</p>
+      </div>
+      <div class="descricao">
+        <p class="bold">Descrição do problema:</p>
+        <p>{{ ordemDeServico.descricao }}</p>
+      </div>
+      
+    </div>
+  </div>

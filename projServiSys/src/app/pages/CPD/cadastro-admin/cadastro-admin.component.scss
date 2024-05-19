@@ -1,0 +1,96 @@
+// Variáveis
+$primary-color: #28a745;
+$secondary-color: #ccc;
+
+// Estilizando o formulário de cadastro
+form.p-1 {
+    margin: 70px; // Margem adicionada
+
+    .pb-2.d-block.d-md-none {
+        h3.border-bottom {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid $primary-color;
+        }
+    }
+
+    .form-row {
+        margin-bottom: 15px;
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input.form-control,
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid $secondary-color;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        .form-group.col-sm-6 {
+            width: 100%; // Alterado para 100% para ocupar a largura total
+            display: block; // Alterado para block para ficar embaixo um do outro
+            margin-bottom: 10px; // Adicionado para dar espaço entre os inputs
+        }
+
+     /*   .form-row .two,.fg.nome, .fg.senha{
+            //display: flex; // Faz cada input ocupar metade da largura do contêiner
+            align-items: center; // Alinha os itens verticalmente ao centro
+            gap: 10px; // Adiciona espaço entre os inputs
+            width: 40%;
+            display: flex;
+            flex-wrap: wrap;
+
+            input {
+                flex: 1; // Faz o input ocupar todo o espaço disponível
+            }
+        }*/
+
+        .two {
+            display: flex;
+            gap: 10px;
+        
+            .form-group {
+              flex: 1;
+        
+              input.form-control {
+                width: 100%;
+              }
+            }
+          }
+    }
+
+    .btn-block {
+        width: 100%;
+        background-color: $primary-color;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        margin-top: 10px;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+
+    .is-invalid {
+        border-color: #dc3545; /* Cor vermelha para indicar um campo inválido */
+        background-color: #f3c2c6; /* Cor de fundo para destacar o campo inválido */
+        outline: none; /* Remove o contorno padrão do input quando está em foco */
+        box-shadow: 0 0 5px darkred; /* Altera a cor da sombra quando o input está em foco */
+        &::placeholder {
+            color: #961f2b; /* Cor desejada para o placeholder */
+          }
+    }
+    
+    .invalid-feedback {
+        color: #dc3545; /* Cor do texto para a mensagem de feedback de erro */
+        font-size: 80%; /* Tamanho da fonte da mensagem de erro */
+    }
+    
+}

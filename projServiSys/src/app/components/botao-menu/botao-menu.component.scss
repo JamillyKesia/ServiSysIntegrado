@@ -1,0 +1,54 @@
+@import 'variaveis';
+
+:host{
+    display: block;
+    width: 100%;
+    
+    button {
+        list-style-type: none;  
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 0px;
+        color: $branco;
+        text-decoration: none;
+        border: 1px solid #126e43;
+        background-color: #126e43; //116b40
+        border-radius: 17px;
+        font-size: 18px;
+
+        button:active{
+            background-color: red;
+        }
+
+
+        /*&.selecionado{
+            background-color: $cor-botao;
+            color: $hover-bt;
+            border: 1px solid $branco;border-radius: 17px;
+            line-height: 30px;
+            text-align: center;
+        }*/
+    }
+    
+    .selecionado {
+        background-color: $cor-botao;
+        color: $hover-bt;
+    }
+
+    .selecionado:hover {
+        background-color: $cor-botao;
+        color: $verde-escuro;
+    }
+    
+
+    //acertar detalhes
+    button:hover{ 
+        color: $branco;
+        border: 1px solid $branco;
+        text-decoration: none;
+        border-radius: 17px;
+        //line-height: 30px;
+        text-align: center;
+    }
+
+}
