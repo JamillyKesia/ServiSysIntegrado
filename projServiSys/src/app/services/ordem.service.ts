@@ -3,11 +3,14 @@ import { HttpClient } from "@angular/common/http"
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 import { OrdemServico } from '../models/ordem-servico';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdemService {
+
+  baseURL = 'http://localhost:5124/api/OrdemServico';
 
   private getOrdem = `${environment.api}/api/OrdemServico`;
   private postOrdem = `${environment.api}/api/OrdemServico`;
@@ -19,7 +22,7 @@ export class OrdemService {
   constructor(private http: HttpClient) {
   }
 
-  obterOrdem(){
+  obterOrdem(): Observable<OrdemServico[]>{
     return this.http.get<OrdemServico[]>(this.getOrdem);
   }
 
@@ -27,7 +30,7 @@ export class OrdemService {
     return this.http.post<User>(this.postOrdem,ordens);
   }
 
-  obterIdOrdem(){
+  obterOrdemById(){
     return this.http.get<OrdemServico[]>(this.getIdOrdem);
   }
 

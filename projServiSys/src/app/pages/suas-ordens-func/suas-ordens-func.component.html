@@ -1,8 +1,27 @@
 <div class="txt-so">
     <p>Nessa página você encontra suas requisições de ordens de serviço</p>
 </div>
-<app-botao-filtro  [descricao]="'Todas as ordens'"></app-botao-filtro>
-<app-botao-filtro  [descricao]="'Concluídas'" ></app-botao-filtro>
-<app-botao-filtro  [descricao]="'Rejeitadas'"></app-botao-filtro>
+
+<app-botao-filtro 
+    descricao="Todas as ordens"
+    [routerLink]="'/principal/home-coord'"
+    [selecionado]="botaoSelecionado === 1"
+    (clicked)="selecionarBotao(1)">
+</app-botao-filtro>
+
+<app-botao-filtro
+    [descricao]="'Concluídas'" 
+    [routerLink]="'/principal/adm-coord'"
+    [selecionado]="botaoSelecionado === 2"
+    (clicked)="selecionarBotao(2)">
+</app-botao-filtro>
+
+<app-botao-filtro  
+    [descricao]="'Rejeitadas'"
+    [routerLink]="'/principal/aprovacoes'"
+    [selecionado]="botaoSelecionado === 3"
+    (clicked)="selecionarBotao(3)">
+</app-botao-filtro>
+
 <app-tabela-ordens></app-tabela-ordens>
 
