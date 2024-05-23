@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { AppRotas } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+//import { DateTimeFormatPipe } from './helpers/date-time-format.pipe';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

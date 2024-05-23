@@ -22,15 +22,15 @@ export class OrdemService {
   constructor(private http: HttpClient) {
   }
 
-  obterOrdem(): Observable<OrdemServico[]>{
+  public obterOrdem(): Observable<OrdemServico[]>{
     return this.http.get<OrdemServico[]>(this.getOrdem);
   }
 
-  cadastrarOrdem(ordens: OrdemServico){
+  public cadastrarOrdem(ordens: OrdemServico){
     return this.http.post<User>(this.postOrdem,ordens);
   }
 
-  obterOrdemById(){
+  public obterOrdemById(){
     return this.http.get<OrdemServico[]>(this.getIdOrdem);
   }
 

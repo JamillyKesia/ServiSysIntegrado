@@ -14,27 +14,39 @@ import { environment } from 'src/environments/environment';
 export class TabelaOrdensComponent {
 
   modalSwitch: boolean = false;
-  public ordens: any = [];
-  public ordensFiltradas: any = [];
 
-  private _filtrosLista: string = '';
+  public ordens: OrdemServico[] = [];
+  public ordensFiltradas: OrdemServico[] = [];
+
+  private _filtrosListado: string = '';
 
   public get filtroLista(): string{
-    return this._filtrosLista;
+    return this._filtrosListado;
   }
 
   public set filtroLista(value: string){
-    this._filtrosLista = value;
+    this._filtrosListado = value;
     this.ordensFiltradas = this.filtroLista ? this.filtrarOrdens(this.filtroLista) : this.ordens;
   }
 
-  filtrarOrdens(filtrarPor: string):any{
+  // public filtrarOrdens(filtrarPor: string):any{
+  //   filtrarPor = filtrarPor.toLocaleLowerCase();
+  //   return this.ordens.filter( //o tema é oq vc vai filtrar, mudar pelo certo
+  //   ordem.id.toLocaleLowerCase().indexOf(filtrarPor) !== -1 || 
+  //   ordem.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+  //     //(ordem: { tema: string; }) => ordem.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1 
+  //     //||
+  //     //ordem.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+  //   );
+  // }
+
+  public filtrarOrdens(filtrarPor: string): OrdemServico[] {
     filtrarPor = filtrarPor.toLocaleLowerCase();
-    return this.ordens.filter( //o tema é oq vc vai filtrar, mudar pelo certo
-      (ordem: { tema: string; }) => ordem.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1 /*||
-      ordem.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1*/
-    )
+    return this.ordens.filter(
+      ordem => ordem.descricaoProblema.toLocaleLowerCase().indexOf(filtrarPor) !== -1 
+    );
   }
+  
 
   constructor(
 
@@ -44,7 +56,7 @@ export class TabelaOrdensComponent {
       //this.obterOrdensCadastradas();
   }
 
-  ngOnInit(){
+  public ngOnInit(){
     this.modalSS.$modal.subscribe((valor) => {this.modalSwitch = valor}); 
     this.obterOrdens();
   }
@@ -54,36 +66,12 @@ export class TabelaOrdensComponent {
   }
 
   public obterOrdens(): void {
-    this.ordemService.obterOrdem().subscribe(
-      (_ordens: OrdemServico[]) => {
-      this.ordens = _ordens;
-      this.ordensFiltradas = _ordens;
-      //this.ordensFiltradas = this.ordens;
+    this.ordemService.obterOrdem().subscribe({
+      next: (ordens: OrdemServico[]) => {
+      this.ordens = ordens;
+      this.ordensFiltradas = this.ordens;
       },
-      error => console.log(error)
-    );
-
-    /*this.http.get<any[]>('http://localhost:5124/api/OrdemServico')
-    .pipe(
-      catchError(error => {
-        console.error('Erro na requisição:', error);
-        throw 'Erro ao obter as ordens cadastradas. Por favor, tente novamente mais tarde.';
-      })
-    )
-    .subscribe({
-      next: (response: any[]) => {
-        this.ordens = response;
-        console.log('Ordens cadastradas:', this.ordens);
-      },
-      error: (error: any) => {
-        console.error('Erro na requisição:', error);
-        // Trate o erro aqui conforme necessário
-      }
-    });*/
-
-    // this.apiService.obterOrdem().
-    // subscribe(ordens => this.ordens = ordens)
-    //this.ordens = this.ordemService.obterOrdem();
+      error: (error:any) => console.log(error)
+    });
   }
-
 }

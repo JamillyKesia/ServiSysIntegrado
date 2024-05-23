@@ -13,17 +13,14 @@
 
                 <td class="id">{{ ordem.id }}</td>
 
-                <td [ngClass]="{ 
-                    'green-background': ordem.estadoOrdemServico === 'Concluída',
-                    'yellow-background': ordem.estadoOrdemServico === 'Em andamento',
-                    'red-background': ordem.estadoOrdemServico === 'Rejeitado' }">
+                <td>
                   {{ ordem.estadoOrdemServico }}
                   <div class="bolinha"></div>
                 </td>
 
-                <td class="data">{{ ordem.dataOrdemServico }}</td>
+                <td class="data">{{ ordem.dataOrdemServico | dateTimeFormat}}</td>
                 
-                <td><button  (click)="openModel2()">{{ ordem.bt }}</button></td>
+                <td><button  (click)="openModel2()">{{ ordem }}</button></td> <!--ordem.bt-->
 
             </tr>
         </tbody>

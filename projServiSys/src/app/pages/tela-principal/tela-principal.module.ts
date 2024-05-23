@@ -27,6 +27,7 @@ import { SuasAprovacoesComponent } from "../Coordenador-TI/suas-aprovacoes/suas-
 import { AprovPendentesComponent } from "../Coordenador-TI/aprov-pendentes/aprov-pendentes.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CadastroAdminComponent } from "../CPD/cadastro-admin/cadastro-admin.component";
+import { DateTimeFormatPipe } from "src/app/helpers/date-time-format.pipe";
 @NgModule({
     declarations: [
         TelaPrincipalComponent,
@@ -41,6 +42,7 @@ import { CadastroAdminComponent } from "../CPD/cadastro-admin/cadastro-admin.com
         BotaoFiltroComponent,
         ModalComponent,
         ModalOsComponent,
+        DateTimeFormatPipe,
         
         HomeCoordComponent,
         AprovPendentesComponent,
