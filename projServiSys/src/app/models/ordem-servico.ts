@@ -1,5 +1,5 @@
 import { EstadoOrdemServicoEnum } from "./estado-ordem-servico-enum";
-import { Lancamento } from "./lancamento";
+//import { Lancamento } from "./lancamento";
 import { OrdemEquipamento } from "./ordem-equipamento";
 import { User } from "./user";
 
@@ -16,5 +16,5 @@ export interface OrdemServico {
     userId: number;
     user: User;
     ordemEquipamentos?: OrdemEquipamento[];
-    lancamentos?: Lancamento[];
+    //lancamentos?: Lancamento[];
 }

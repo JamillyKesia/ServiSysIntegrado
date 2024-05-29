@@ -26,7 +26,7 @@ import { HomeCoordComponent } from "../Coordenador-TI/home-coord/home-coord.comp
 import { SuasAprovacoesComponent } from "../Coordenador-TI/suas-aprovacoes/suas-aprovacoes.component";
 import { AprovPendentesComponent } from "../Coordenador-TI/aprov-pendentes/aprov-pendentes.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CadastroAdminComponent } from "../CPD/cadastro-admin/cadastro-admin.component";
+import { CadastroAdminComponent } from "../Coordenador-TI/cadastro-admin/cadastro-admin.component";
 import { DateTimeFormatPipe } from "src/app/helpers/date-time-format.pipe";
 @NgModule({
     declarations: [

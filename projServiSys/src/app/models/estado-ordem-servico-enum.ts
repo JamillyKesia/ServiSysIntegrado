@@ -1,6 +1,8 @@
 export enum EstadoOrdemServicoEnum {
-    Concluída = 'funcionario',
-    Andamento = 'coordenador',
-    cpd = 'cpd',
-    Pendente = "Pendente",
+  EmAnalise = "EmAnálise",
+  Aprovada = "Aprovada",
+  NaoAprovada = "NãoAprovada",
+  Concluida = "Concluída",
+  EmAndamento = "EmAndamento",
+  ItemParaCompra = "ItemParaCompra"
 }

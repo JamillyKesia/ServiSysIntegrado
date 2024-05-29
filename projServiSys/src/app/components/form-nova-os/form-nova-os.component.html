@@ -2,37 +2,30 @@
     <form class="form-flex"> <!--#form="ngForm" (ngSubmit)="onSubmit(form)"-->
         <div class="group-local">
             <label for="local">Local de ocorrência*</label>
-            <select type="local" id="local" name="local" [(ngModel)]="localEquipamento" required>
-                <option value=""></option>
-                <option value="Lab 1">Lab 1</option>
-                <option value="Lab 2">Lab 2</option>
-                <option value="Lab 3">Lab 3</option>
-            </select>
+            <input type="local" id="local" name="local" [(ngModel)]="localEquipamento" required>
         </div>
         
         <div class="group-tipo">
             <label for="tipo">Tipo do equipamento*</label>
             <select type="tipo" id="tipo" name="tipo" [(ngModel)]="tipoEquipamento" required>
                 <option value=""></option>
-                <option value="Lab 1">Lab 1</option>
-                <option value="Lab 2">Lab 2</option>
-                <option value="Lab 3">Lab 3</option>
+                <option value="Mouse">Mouse</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Teclado">Teclado</option>
+                <option value="Notebook">Notebook</option>
+                <option value="Gabinete">Gabinete</option>
+                <option value="Impressora">Impressora</option>
             </select>
         </div>
         
         <div class="group-posicao">
             <label for="posicao">Posição do equipamento* (?)</label>
-            <select type="posicao" id="posicao" name="ambiente" [(ngModel)]="localEquipamento" required>
-                <option value=""></option>
-                <option value="Fileira 1">Fileira 1</option>
-                <option value="Fileira 2">Fileira 2</option>
-                <option value="Fileira 3">Fileira 3</option>
-            </select>
+            <input type="posicao"  id="posicao" name="posicao" [(ngModel)]="localEquipamento" required>
         </div>
 
         <div class="group-serial">
             <label for="serial">Serial do equipamento*</label>
-            <input type="number" type="number" id="serial" name="serial" [(ngModel)]="serialEquipamento" required>
+            <input type="number" id="serial" name="serial" [(ngModel)]="serialEquipamento" required>
         </div>
 
         <div class="group-descricao">

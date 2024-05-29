@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidatorField } from 'src/app/helpers/validator-field';
 
+
 @Component({
   selector: 'app-cadastro-admin',
   templateUrl: './cadastro-admin.component.html',
@@ -21,20 +22,32 @@ export class CadastroAdminComponent implements OnInit {
 
   private validation(): void {
 
-    const formOptions: AbstractControlOptions ={
+    const formOptions: AbstractControlOptions = {
       validators: ValidatorField.MustMatch('senha', 'confirmeSenha')
     };
 
     this.form = this.fb.group({
-      primeiroNome:['', Validators.required],
-      ultimoNome:['', Validators.required],
-      email:['', 
-      [Validators.required, Validators.minLength(6)]
+      primeiroNome: ['', Validators.required],
+      ultimoNome: ['', Validators.required],
+      email: ['', 
+        [Validators.required, Validators.minLength(6)]
       ],
-      userName:['', Validators.required],
-      senha:['', Validators.required],
-      confirmeSenha:['', Validators.required],
-      tipoUser:['', Validators.required]
+      userName: ['', [
+        Validators.required,
+        Validators.minLength(4),
+      ]],
+      senha: ['', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(8)
+      ]],
+      confirmeSenha: ['', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(8)
+      ]],
+      tipoUser: ['', Validators.required],
+      cargo: ['', Validators.required]
     }, formOptions);
   }
 

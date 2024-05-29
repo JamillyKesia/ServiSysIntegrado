@@ -47,7 +47,6 @@ export class TabelaOrdensComponent {
     );
   }
   
-
   constructor(
 
     private modalSS: SwitchService,
@@ -58,15 +57,15 @@ export class TabelaOrdensComponent {
 
   public ngOnInit(){
     this.modalSS.$modal.subscribe((valor) => {this.modalSwitch = valor}); 
-    this.obterOrdens();
+    this.GetOrdemServico();
   }
 
-  openModel2(){
+  public openModel2(){
     this.modalSwitch = true;
   }
 
-  public obterOrdens(): void {
-    this.ordemService.obterOrdem().subscribe({
+  public GetOrdemServico(): void {
+    this.ordemService.GetOrdemServico().subscribe({
       next: (ordens: OrdemServico[]) => {
       this.ordens = ordens;
       this.ordensFiltradas = this.ordens;

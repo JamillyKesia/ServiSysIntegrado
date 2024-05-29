@@ -36,19 +36,6 @@ form.p-1 {
             margin-bottom: 10px; // Adicionado para dar espaço entre os inputs
         }
 
-     /*   .form-row .two,.fg.nome, .fg.senha{
-            //display: flex; // Faz cada input ocupar metade da largura do contêiner
-            align-items: center; // Alinha os itens verticalmente ao centro
-            gap: 10px; // Adiciona espaço entre os inputs
-            width: 40%;
-            display: flex;
-            flex-wrap: wrap;
-
-            input {
-                flex: 1; // Faz o input ocupar todo o espaço disponível
-            }
-        }*/
-
         .two {
             display: flex;
             gap: 10px;

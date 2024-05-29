@@ -73,7 +73,7 @@ export class FormNovaOsComponent {
 
   obterOrdensCadastradas(){ 
     // Substitua 'this.ordem = response' pela atribuição correta à variável 'ordens$'
-    this.ordens = this.ordemService.obterOrdem();
+    this.ordens = this.ordemService.GetOrdemServico();
   }
 
 

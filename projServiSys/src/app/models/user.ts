@@ -1,4 +1,4 @@
-import { Lancamento } from "./lancamento";
+//import { Lancamento } from "./lancamento";
 import { OrdemServico } from "./ordem-servico";
 
 export interface User {
@@ -10,20 +10,25 @@ export interface User {
     cargo: CargoEnum;
     tipoUsuario: TipoUsuarioEnum;
     ordensDeServico?: OrdemServico[];
-    lancamentos?: Lancamento[];
+   // lancamentos?: Lancamento[];
       
 }
 
 enum CargoEnum {
-    func = 'funcionario',
-    coord = 'coordenador',
-    cpd = 'cpd',
+    Diretor = 'Diretor',
+    Coordenador = 'Coordenado',
+    Professor = 'Professor',
+    Secretario = 'Secretario',
+    OrientadorEducacional = 'OrientadorEducacional',
+    TecnicoInformatica = 'TecnicoInformatica',
+    CoordenadorTI = 'CoordenadorTI'
 }
 
 enum TipoUsuarioEnum {
-    func = 'funcionario',
-    coord = 'coordenador',
-    cpd = 'cpd',
+    Solicitante = 'Solicitante',
+    Coordenador_TI = 'Coordenador_TI',
+    Tecnico = 'Tecnico',
+    Administrador = 'Administrador'
 }
 
 
