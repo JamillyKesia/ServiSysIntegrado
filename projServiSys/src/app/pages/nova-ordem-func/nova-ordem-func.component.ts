@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ValidatorField } from 'src/app/helpers/validator-field';
 import { EstadoOrdemServicoEnum } from 'src/app/models/estado-ordem-servico-enum';
@@ -90,6 +90,10 @@ export class NovaOrdemFuncComponent {
       serialEquipamento: ['',[Validators.required, Validators.minLength(4)]],
       descricaoProblema: ['', [Validators.required]],
     });
+  }
+
+  public cssValidator(campoForm: FormControl): any {
+    return {'is-invalid': campoForm.errors && campoForm.touched};
   }
 
   

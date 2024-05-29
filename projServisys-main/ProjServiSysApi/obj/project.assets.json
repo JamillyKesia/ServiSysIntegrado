@@ -6182,11 +6182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSysApi\\ProjServiSysApi.csproj",
+      "projectUniqueName": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSysApi\\ProjServiSysApi.csproj",
       "projectName": "ProjServiSysApi",
-      "projectPath": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSysApi\\ProjServiSysApi.csproj",
+      "projectPath": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSysApi\\ProjServiSysApi.csproj",
       "packagesPath": "C:\\Users\\jamil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSysApi\\obj\\",
+      "outputPath": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSysApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jamil\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6201,8 +6201,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Application\\ProjServiSys.Application.csproj": {
-              "projectPath": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Application\\ProjServiSys.Application.csproj"
+            "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Application\\ProjServiSys.Application.csproj": {
+              "projectPath": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Application\\ProjServiSys.Application.csproj"
             }
           }
         }

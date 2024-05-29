@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidatorField } from 'src/app/helpers/validator-field';
 
 
@@ -30,7 +30,7 @@ export class CadastroAdminComponent implements OnInit {
       primeiroNome: ['', Validators.required],
       ultimoNome: ['', Validators.required],
       email: ['', 
-        [Validators.required, Validators.minLength(6)]
+        [Validators.required, Validators.email]
       ],
       userName: ['', [
         Validators.required,
@@ -42,15 +42,15 @@ export class CadastroAdminComponent implements OnInit {
         Validators.maxLength(8)
       ]],
       confirmeSenha: ['', [
-        Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(8)
+        Validators.required
       ]],
       tipoUser: ['', Validators.required],
       cargo: ['', Validators.required]
     }, formOptions);
   }
 
-  
+  public cssValidator(campoForm: FormControl): any {
+    return {'is-invalid': campoForm.errors && campoForm.touched};
+  }
 
 }

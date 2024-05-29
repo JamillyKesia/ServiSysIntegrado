@@ -9,7 +9,7 @@
             <label for="">Usuario:</label>
             <input class="form-control" type="text" 
 			formControlName="userName"
-			[ngClass]="{'is-invalid': f.userName.errors && f.userName.touched}"
+			[ngClass]="cssValidator(f.userName)" 
 			placeholder="Insira o nome de Usuário" />
 			<div *ngIf="f.userName.errors && f.userName.touched" class="invalid-feedback">
 				Nome do Usuário é obrigatório.
@@ -22,7 +22,7 @@
 			<label>Primeiro Nome</label>
 			<input type="text" class="form-control" 
 			formControlName="primeiroNome"
-			[ngClass]="{'is-invalid': f.primeiroNome.errors && f.primeiroNome.touched}"
+			[ngClass]="cssValidator(f.primeiroNome)" 
 			placeholder="Insira o Primeiro nome" />
 			<div *ngIf="f.primeiroNome.errors?.required && f.primeiroNome.touched" class="invalid-feedback">
 				Primeiro Nome é obrigatório.
@@ -32,7 +32,7 @@
 			<label>Último nome</label>
 			<input type="text" class="form-control"
 			formControlName="ultimoNome"
-			[ngClass]="{'is-invalid': f.ultimoNome.errors && f.ultimoNome.touched}"
+			[ngClass]="cssValidator(f.ultimoNome)" 
 			placeholder="Insira o Último nome" />
 			<div *ngIf="f.ultimoNome.errors && f.ultimoNome.touched" class="invalid-feedback">
 				Último Nome é obrigatório.
@@ -44,12 +44,12 @@
             <label for="">Email:</label>
             <input class="form-control" type="text"
 			formControlName="email" 
-			[ngClass]="{'is-invalid': f.email.errors && f.email.touched}"
+			[ngClass]="cssValidator(f.email)" 
 			placeholder="Insira o email" />
-			<div *ngIf="f.email.errors?.required  && f.email.touched" class="invalid-feedback">
+			<div *ngIf="f.email.errors?.required && f.email.touched" class="invalid-feedback">
 				E-mail é obrigatório.
 			</div>
-			<div *ngIf="f.email.errors?.email  && f.email.touched" class="invalid-feedback">
+			<div *ngIf="f.email.errors?.email && f.email.touched" class="invalid-feedback">
 				Deve ser um e-mail válido.
 			</div>
         </div>
@@ -59,8 +59,8 @@
 			<label for="">Senha:</label>
 			<input class="form-control" type="password" 
 			formControlName="senha"
-			[ngClass]="{'is-invalid': f.senha.errors && f.senha.touched}"
-			placeholder="Digite uma Senha" >
+			[ngClass]="cssValidator(f.senha)" 
+			placeholder="Digite uma Senha" />
 			<div *ngIf="f.senha.errors?.required && f.senha.touched" class="invalid-feedback">
 				Senha é obrigatória.
 			</div>
@@ -74,19 +74,13 @@
 		<div class="fg senha">
 			<label for="">Confirmar Senha:</label>
 			<input class="form-control" type="password"
-			[ngClass]="{'is-invalid': f.confirmeSenha.errors && f.confirmeSenha.touched}"
-			formControlName="confirmeSenha"  placeholder="Confirme a Senha" >
+			[ngClass]="cssValidator(f.confirmeSenha)" 
+			formControlName="confirmeSenha"  placeholder="Confirme a Senha" />
 			<div *ngIf="f.confirmeSenha.errors?.required && f.confirmeSenha.errors && f.confirmeSenha.touched" class="invalid-feedback">
 				Confirmar Senha é obrigatório.
 			</div>
 			<div *ngIf="f.confirmeSenha.errors?.mustMatch" class="invalid-feedback">
 				Repetir a senha Senha é obrigatório.
-			</div>
-			<div *ngIf="f.confirmeSenha.errors?.min" class="invalid-feedback">
-				A confirmação de senha deve ter no mínimo 6 caracteres.
-			</div>
-			<div *ngIf="f.confirmeSenha.errors?.max" class="invalid-feedback">
-				A confirmação de senha deve ter no máximo 8 caracteres.
 			</div>
 		</div>
 	</div>
@@ -94,7 +88,7 @@
         <label for="tipoUser">Tipo de Usuário</label>
         <select type="tipoUser" id="tipoUser"
 		formControlName="tipoUser"
-		[ngClass]="{'is-invalid': f.tipoUser.errors && f.tipoUser.touched}"
+		[ngClass]="cssValidator(f.tipoUser)" 
 		name="tipoUser" placeholder="Escolha o tipo de Usuário" >
             <option value="" disabled selected hidden></option>
             <option value="Solicitante">Solicitante</option>
@@ -110,7 +104,7 @@
         <label for="cargo">Cargo</label>
         <select type="cargo" id="cargo"
 		formControlName="cargo"
-		[ngClass]="{'is-invalid': f.cargo.errors && f.cargo.touched}"
+		[ngClass]="cssValidator(f.cargo)" 
 		name="cargo" placeholder="Escolha o Cargo do Usuário" >
             <option value="" disabled selected hidden></option>
             <option value="Diretor">Solicitante</option>

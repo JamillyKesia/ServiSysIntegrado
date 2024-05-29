@@ -19,13 +19,13 @@
                 <td class="id">{{ ordem.id }}</td>
 
                 <td>
-                  {{ ordem.estadoOrdemServico }}
-                  <div class="bolinha"></div>
+                    {{ ordem.estadoOrdemServico }}
+                    <div class="bolinha"></div>
                 </td>
 
                 <td class="data">{{ ordem.dataOrdemServico | dateTimeFormat}}</td>
                 
-                <td><button  (click)="openModel2()">{{ ordem }}</button></td> <!--ordem.bt-->
+                <td><button (click)="openModel2()">{{ ordem }}</button></td> <!--ordem.bt-->
 
             </tr>
         </tbody>

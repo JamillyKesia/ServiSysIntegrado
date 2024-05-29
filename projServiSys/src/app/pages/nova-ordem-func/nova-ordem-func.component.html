@@ -7,7 +7,7 @@
         <div class="group-local">
             <label>Local de ocorrência*</label>
             <input type="text" class="form-control" id="local"
-            [ngClass]="{'is-invalid': fn.localEquipamento.errors && fn.localEquipamento.touched}" 
+            [ngClass]="cssValidator(fn.localEquipamento)" 
             formControlName="localEquipamento">
             <div *ngIf="fn.localEquipamento.errors?.required && fn.localEquipamento.touched" class="invalid-feedback">
 				Local do equipamento é obrigatório.
@@ -17,7 +17,7 @@
         <div class="group-tipo">
             <label>Tipo do equipamento*</label>
             <input type="text" class="form-control" id="tipo" 
-            [ngClass]="{'is-invalid': fn.tipoEquipamento.errors && fn.tipoEquipamento.touched}" 
+            [ngClass]="cssValidator(fn.tipoEquipamento)" 
             formControlName="tipoEquipamento" >
             <div *ngIf="fn.tipoEquipamento.errors?.required && fn.tipoEquipamento.touched" class="invalid-feedback">
 				Tipo do equipamento é obrigatório.
@@ -27,7 +27,7 @@
         <div class="group-serial">
             <label>Serial do equipamento*</label>
             <input class="form-control" type="text" id="serial"
-            [ngClass]="{'is-invalid': fn.serialEquipamento.errors && fn.serialEquipamento.touched}"
+            [ngClass]="cssValidator(fn.serialEquipamento)"
             formControlName="serialEquipamento" >
             <div *ngIf="fn.serialEquipamento.errors?.required && fn.serialEquipamento.touched" class="invalid-feedback">
 				Serial é obrigatório.
@@ -41,7 +41,7 @@
             <label>Descrição do problema</label>
             <textarea type="text" id="descricao"
             rows="5" cols="50" class="form-control"
-            [ngClass]="{'is-invalid': fn.descricaoProblema.errors && fn.descricaoProblema.touched}"
+            [ngClass]="cssValidator(fn.descricaoProblema)"
             formControlName="descricaoProblema"></textarea>
             <div *ngIf="fn.descricaoProblema.errors?.required && fn.descricaoProblema.touched" class="invalid-feedback">
 				Descrição do problema é obrigatória.

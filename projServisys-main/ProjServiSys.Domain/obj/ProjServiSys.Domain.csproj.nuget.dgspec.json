@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj": {}
+    "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj": {
+    "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj",
         "projectName": "ProjServiSys.Domain",
-        "projectPath": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj",
+        "projectPath": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj",
         "packagesPath": "C:\\Users\\jamil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Domain\\obj\\",
+        "outputPath": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jamil\\AppData\\Roaming\\NuGet\\NuGet.Config"

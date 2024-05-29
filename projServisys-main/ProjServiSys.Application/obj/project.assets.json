@@ -4923,11 +4923,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Application\\ProjServiSys.Application.csproj",
+      "projectUniqueName": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Application\\ProjServiSys.Application.csproj",
       "projectName": "ProjServiSys.Application",
-      "projectPath": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Application\\ProjServiSys.Application.csproj",
+      "projectPath": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Application\\ProjServiSys.Application.csproj",
       "packagesPath": "C:\\Users\\jamil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Application\\obj\\",
+      "outputPath": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jamil\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4942,8 +4942,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj": {
-              "projectPath": "C:\\Users\\jamil\\SSintegrado\\ProjServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj"
+            "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj": {
+              "projectPath": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Domain\\ProjServiSys.Domain.csproj"
             },
             "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Persistence\\ProjServiSys.Persistence.csproj": {
               "projectPath": "C:\\Users\\jamil\\SSintegrado\\projServisys-main\\ProjServiSys.Persistence\\ProjServiSys.Persistence.csproj"
