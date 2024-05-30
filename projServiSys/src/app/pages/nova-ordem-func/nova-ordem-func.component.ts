@@ -18,24 +18,12 @@ import { SwitchService } from 'src/app/services/switch.service';
 export class NovaOrdemFuncComponent {
 
   condicao1: boolean = true;
-
   modalSwitch: boolean = false;
-
   formNO!: FormGroup;
+  ordens = new Observable<OrdemServico[]>();
 
-
-  /*id: number = 0;
-  dataOrdemServico: Date = new Date();
-  descricaoProblema: string = '';
-  aprovada: boolean = false;
-  localEquipamento: string = '';
-  tipoEquipamento: string = '';
-  serialEquipamento: string = '';
-  estadoOrdemServico: EstadoOrdemServicoEnum | undefined;
-  userId: number = 0;
-  user: User | undefined;
-  ordemEquipamentos?: OrdemEquipamento[];
-  lancamentos?: Lancamento[];*/
+  //ordens  : Ordem[] = []
+  //get f(): any { return this.form.controls; }
   
   constructor(
   private modalSS: SwitchService,
@@ -47,42 +35,11 @@ export class NovaOrdemFuncComponent {
     this.validation();
   }
 
-  openModal(){
-    this.modalSwitch = true;
-  }
-
-  //ordens  : Ordem[] = []
-  ordens = new Observable<OrdemServico[]>();
-
-
-  cadastrarOrdem(){
-   /* if(!this.localEquipamento || !this.tipoEquipamento)
-      return;
-
-    this.OrdemServico.cadastrarOrdem({ 
-      id: this.id,
-      dataOrdemServico: this.dataOrdemServico,
-      descricaoProblema: this.descricaoProblema,
-      aprovada: this.aprovada,
-      localEquipamento: this.localEquipamento,
-      tipoEquipamento: this.tipoEquipamento,
-      serialEquipamento: this.serialEquipamento,
-      estadoOrdemServico: this.estadoOrdemServico,
-      userId: this.userId,
-      user: this.user })
-    .subscribe(_ => this.obterOrdensCadastradas())*/
-  }
-
-  obterOrdensCadastradas(){ 
-    // Substitua 'this.ordem = response' pela atribuição correta à variável 'ordens$'
-    this.ordens = this.ordemService.GetOrdemServico();
-  }
-
   get fn(): any {
-      return this.formNO.controls;
+    return this.formNO.controls;
   }
 
-  public validation(): void {
+  private validation(): void {
 
     this.formNO = this.fb.group({
       localEquipamento: ['', Validators.required],
@@ -96,5 +53,34 @@ export class NovaOrdemFuncComponent {
     return {'is-invalid': campoForm.errors && campoForm.touched};
   }
 
-  
+  //salvar ordens com api
+  public salvarAlteracao(): void {
+    //this.spinner.show();
+    if(this.formNO.valid){
+
+      const ordem = {... this.formNO.value};
+
+      this.ordemService.PostOrdemServico(ordem).subscribe(
+        () => {
+        //this.modalMessage = 'Evento salvo com sucesso!';
+        this.openModal();
+        },
+        (error: any) =>{
+          console.error(error);
+          //this.modalMessage = 'Erro ao salvar evento';
+          this.openModal();
+        }
+      );
+    }
+  }
+
+  openModal(){
+    this.modalSwitch = true;
+  }
+
+  closeModal(): void {
+    this.modalSwitch = false;
+  }
+
+
 }
