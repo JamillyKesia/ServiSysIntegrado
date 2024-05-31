@@ -8,10 +8,10 @@ import { User } from '../models/user';
 })
 export class UserService {
   // Account
-  private getUser = `${environment.api}/api/Account/GetUser`;
-  private registerUser = `${environment.api}/api/Account/RegisterUser`;
-  private loginUser = `${environment.api}/api/Account/Login`;
-  private updateUser = `${environment.api}/api/Account/UpdateUser`;
+  private getUser = `${environment.apiURL}/api/Account/GetUser`;
+  private registerUser = `${environment.apiURL}/api/Account/RegisterUser`;
+  private loginUser = `${environment.apiURL}/api/Account/Login`;
+  private updateUser = `${environment.apiURL}/api/Account/UpdateUser`;
 
   //tokenHeader = new HttpHeaders({'Authorization': token})  
 

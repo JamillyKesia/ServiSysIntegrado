@@ -1,9 +1,9 @@
 import { Routes} from "@angular/router";
 import { AppRoutingModule } from "src/app/app-routing.module";
 import { TelaPrincipalComponent } from "./tela-principal.component";
-import { HomeComponent } from "../home/home.component";
-import { NovaOrdemFuncComponent } from "../nova-ordem-func/nova-ordem-func.component";
-import { SuasOrdensFuncComponent } from "../suas-ordens-func/suas-ordens-func.component";
+import { HomeComponent } from "../funcionario/home/home.component";
+import { NovaOrdemFuncComponent } from "../funcionario/nova-ordem-func/nova-ordem-func.component";
+import { SuasOrdensFuncComponent } from "../funcionario/suas-ordens-func/suas-ordens-func.component";
 import { HomeCpdComponent } from "../CPD/home-cpd/home-cpd.component";
 import { OsCpdComponent } from "../CPD/os-cpd/os-cpd.component";
 import { ManutencoesCpdComponent } from "../CPD/manutencoes-cpd/manutencoes-cpd.component";

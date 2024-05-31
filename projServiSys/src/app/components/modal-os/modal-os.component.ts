@@ -28,7 +28,9 @@ export class ModalOsComponent {
   closeModal2(){
     this.modalSS.$modal.emit(false);
   }
+  
 
+  //carrega os detalhes de uma ordem de serviço com base em um ID passado como parâmetro na rota
   public carregarOrdem(): void {
     const ordemIdParam = this.router.snapshot.paramMap.get('id');
   
@@ -40,7 +42,7 @@ export class ModalOsComponent {
           //this.modal.patchValue(this.ordem);
         },
         (error: any) => {
-          console: error(error);
+          console.error(error);
         },
         () => {},
       )

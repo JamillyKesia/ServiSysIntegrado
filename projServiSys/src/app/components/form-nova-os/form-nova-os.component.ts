@@ -5,9 +5,6 @@ import { Observable } from 'rxjs';
 import { OrdemServico } from 'src/app/models/ordem-servico';
 import { OrdemService } from 'src/app/services/ordem.service';
 import { User } from 'src/app/models/user';
-import { EstadoOrdemServicoEnum } from 'src/app/models/estado-ordem-servico-enum';
-import { OrdemEquipamento } from 'src/app/models/ordem-equipamento';
-import { Lancamento } from 'src/app/models/lancamento';
 
 @Component({
   selector: 'app-form-nova-os',
@@ -18,7 +15,7 @@ export class FormNovaOsComponent {
   
   modalSwitch: boolean = false;
   //formulario: any = {};
-
+/*
   id: number = 0;
   dataOrdemServico: Date = new Date();
   descricaoProblema: string = '';
@@ -26,11 +23,9 @@ export class FormNovaOsComponent {
   localEquipamento: string = '';
   tipoEquipamento: string = '';
   serialEquipamento: string = '';
-  estadoOrdemServico: EstadoOrdemServicoEnum | undefined;
   userId: number = 0;
   user: User | undefined;
-  ordemEquipamentos?: OrdemEquipamento[];
-  lancamentos?: Lancamento[];
+*/
 
 
   constructor(

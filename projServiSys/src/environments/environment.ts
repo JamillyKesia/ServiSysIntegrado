@@ -1,3 +1,3 @@
 export const environment = {
-    api: '',
+    apiURL: 'http://localhost:5124/api/OrdemServico'
 };

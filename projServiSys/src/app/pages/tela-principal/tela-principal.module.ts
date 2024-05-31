@@ -6,12 +6,12 @@ import { TabelaOrdensComponent } from './../../components/tabela-ordens/tabela-o
 import { BotaoMenuComponent } from "src/app/components/botao-menu/botao-menu.component"; 
 import { MenuLateralComponent } from "src/app/components/menu-lateral/menu-lateral.component";
 import { MenuSuperiorComponent } from "src/app/components/menu-superior/menu-superior.component";
-import { HomeComponent } from "../home/home.component";
+import { HomeComponent } from "../funcionario/home/home.component";
 import { TelaPrincipalRotas } from "./tela-principal.routes";
 import { TelaPrincipalComponent } from "./tela-principal.component";
-import { NovaOrdemFuncComponent } from '../nova-ordem-func/nova-ordem-func.component';
+import { NovaOrdemFuncComponent } from '../funcionario/nova-ordem-func/nova-ordem-func.component';
 import { FormNovaOsComponent } from 'src/app/components/form-nova-os/form-nova-os.component';
-import { SuasOrdensFuncComponent } from "../suas-ordens-func/suas-ordens-func.component";
+import { SuasOrdensFuncComponent } from "../funcionario/suas-ordens-func/suas-ordens-func.component";
 import { BotaoFiltroComponent } from "src/app/components/botao-filtro/botao-filtro.component";
 import { ModalOsComponent } from "src/app/components/modal-os/modal-os.component";
 //import { BotaoMenuCoordComponent } from "src/app/components/Coordenador-TI/botao-menu-coord/botao-menu-coord.component";
@@ -25,7 +25,8 @@ import { SolicitacaoComponent } from "src/app/components/Coordenador-TI/solicita
 import { HomeCoordComponent } from "../Coordenador-TI/home-coord/home-coord.component";
 import { SuasAprovacoesComponent } from "../Coordenador-TI/suas-aprovacoes/suas-aprovacoes.component";
 import { AprovPendentesComponent } from "../Coordenador-TI/aprov-pendentes/aprov-pendentes.component";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CadastroAdminComponent } from "../Coordenador-TI/cadastro-admin/cadastro-admin.component";
 import { DateTimeFormatPipe } from "src/app/helpers/date-time-format.pipe";
 @NgModule({
@@ -59,7 +60,6 @@ import { DateTimeFormatPipe } from "src/app/helpers/date-time-format.pipe";
         CommonModule,
         RouterModule.forChild(TelaPrincipalRotas),
         FormsModule,
-        FormsModule, // Se estiver usando template-driven forms
         ReactiveFormsModule // Se estiver usando reactive forms
     ]
 })

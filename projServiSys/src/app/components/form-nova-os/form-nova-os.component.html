@@ -1,46 +1,4 @@
-<div class="container">
-    <form class="form-flex"> <!--#form="ngForm" (ngSubmit)="onSubmit(form)"-->
-        <div class="group-local">
-            <label for="local">Local de ocorrência*</label>
-            <input type="local" id="local" name="local" [(ngModel)]="localEquipamento" required>
-        </div>
-        
-        <div class="group-tipo">
-            <label for="tipo">Tipo do equipamento*</label>
-            <select type="tipo" id="tipo" name="tipo" [(ngModel)]="tipoEquipamento" required>
-                <option value=""></option>
-                <option value="Mouse">Mouse</option>
-                <option value="Monitor">Monitor</option>
-                <option value="Teclado">Teclado</option>
-                <option value="Notebook">Notebook</option>
-                <option value="Gabinete">Gabinete</option>
-                <option value="Impressora">Impressora</option>
-            </select>
-        </div>
-        
-        <div class="group-posicao">
-            <label for="posicao">Posição do equipamento* (?)</label>
-            <input type="posicao"  id="posicao" name="posicao" [(ngModel)]="localEquipamento" required>
-        </div>
 
-        <div class="group-serial">
-            <label for="serial">Serial do equipamento*</label>
-            <input type="number" id="serial" name="serial" [(ngModel)]="serialEquipamento" required>
-        </div>
-
-        <div class="group-descricao">
-            <label for="descricao">Descrição do problema</label>
-            <textarea type="descricao" id="descricao" name="descricao" [(ngModel)]="descricaoProblema" rows="5" cols="50" required></textarea>
-        </div>
-
-        <button type="submit" class="button" (click)="openModal()" (click)="cadastrarOrdem()">Enviar</button>
-
-    </form>
-</div>
-
-<div class="" *ngIf="modalSwitch == true">
-    <app-modal></app-modal>
-</div>
 
  <!-- Modal 
  <div *ngIf="modalVisible" class="modal" (click)="openModal()">

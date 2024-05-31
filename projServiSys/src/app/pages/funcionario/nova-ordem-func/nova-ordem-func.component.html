@@ -1,0 +1,64 @@
+<div class="txt-os">
+    <p>Preencha abaixo as informações para requisitar a ordem de serviço:</p>
+</div>
+
+<div class="container">
+    <form class="form-flex" [formGroup]="formNO">
+        <div class="group-local">
+            <label>Local de ocorrência*</label>
+            <input type="text" class="form-control" id="local"
+            [ngClass]="cssValidator(fn.localEquipamento)" 
+            formControlName="localEquipamento">
+            <div *ngIf="fn.localEquipamento.errors?.required && fn.localEquipamento.touched" class="invalid-feedback">
+				Local do equipamento é obrigatório.
+			</div>
+        </div>
+        
+        <div class="group-tipo">
+            <label>Tipo do equipamento*</label>
+            <input type="text" class="form-control" id="tipo" 
+            [ngClass]="cssValidator(fn.tipoEquipamento)" 
+            formControlName="tipoEquipamento" >
+            <div *ngIf="fn.tipoEquipamento.errors?.required && fn.tipoEquipamento.touched" class="invalid-feedback">
+				Tipo do equipamento é obrigatório.
+			</div>
+        </div>
+
+        <div class="group-serial">
+            <label>Serial do equipamento*</label>
+            <input class="form-control" type="text" id="serial"
+            [ngClass]="cssValidator(fn.serialEquipamento)"
+            formControlName="serialEquipamento" >
+            <div *ngIf="fn.serialEquipamento.errors?.required && fn.serialEquipamento.touched" class="invalid-feedback">
+				Serial é obrigatório.
+			</div>
+            <div *ngIf="fn.serialEquipamento.errors?.minlength && fn.serialEquipamento.touched" class="invalid-feedback">
+				Serial deve conter no mínimo 6 caracteres.
+			</div>
+        </div>
+
+        <div class="group-descricao">
+            <label>Descrição do problema</label>
+            <textarea type="text" id="descricao"
+            rows="5" cols="50" class="form-control"
+            [ngClass]="cssValidator(fn.descricaoProblema)"
+            formControlName="descricaoProblema"></textarea>
+            <div *ngIf="fn.descricaoProblema.errors?.required && fn.descricaoProblema.touched" class="invalid-feedback">
+				Descrição do problema é obrigatória.
+			</div>
+        </div>
+
+        <button type="submit" class="button" [disabled]="!formNO.valid" (click)="salvarAlteracao()">Enviar</button>
+    </form>
+</div>
+
+<div class="" *ngIf="modalSwitch == true">
+    <app-modal></app-modal>
+</div>
+
+ <!-- Modal 
+ <div *ngIf="modalVisible" class="modal" (click)="openModal()">
+    <app-modal></app-modal>
+  </div>-->
+
+<!--<app-form-nova-os></app-form-nova-os>-->
