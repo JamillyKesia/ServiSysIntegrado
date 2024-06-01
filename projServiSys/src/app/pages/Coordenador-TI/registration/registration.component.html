@@ -1,5 +1,4 @@
 <!--REGISTRATION FORM-->
-
 <form [formGroup]="form" class="p-1" (ngSubmit)="register()">
 	<div class="pb-2 d-block d-md-none">
 		<h3 class="border-bottom">Cadastro de Novo Usuário</h3>
@@ -85,21 +84,21 @@
 		</div>
 	</div>
 	<div class="form-row col-sm-6">
-        <label for="tipoUser">Tipo de Usuário</label>
-        <select type="tipoUser" id="tipoUser"
-		formControlName="tipoUser"
-		[ngClass]="cssValidator(f.tipoUser)" 
-		name="tipoUser" placeholder="Escolha o tipo de Usuário" >
+        <label for="tipoUsuario">Tipo de Usuário:</label>
+        <select type="tipoUsuario" id="tipoUsuario"
+		formControlName="tipoUsuario"
+		[ngClass]="cssValidator(f.tipoUsuario)" 
+		name="tipoUsuario" placeholder="Escolha o Tipo de Usuário" >
             <option value="" disabled selected hidden></option>
             <option value="Solicitante">Solicitante</option>
-            <option value="CoordenadorTI">Coordenador de TI</option>
-			<option value="Tecnico">Técnico</option>
-			<option value="Administrador">Administrador</option>
+			<option value="Coordenador_TI">Coordenador de TI</option>
+			<option value="Tecnico">Técnico de Informática</option>
+            <option value="Administrador">Administrador</option>			
         </select>
-		<div *ngIf="f.tipoUser.errors?.required && f.tipoUser.touched" class="invalid-feedback">
+		<div *ngIf="f.tipoUsuario.errors?.required && f.tipoUsuario.touched" class="invalid-feedback">
 			Tipo de Usuário é obrigatório.
 		</div>
-    </div>
+	</div>
 	<div class="form-row col-sm-6">
         <label for="cargo">Cargo</label>
         <select type="cargo" id="cargo"
@@ -107,7 +106,7 @@
 		[ngClass]="cssValidator(f.cargo)" 
 		name="cargo" placeholder="Escolha o Cargo do Usuário" >
             <option value="" disabled selected hidden></option>
-            <option value="Diretor">Solicitante</option>
+            <option value="Diretor">Diretor</option>
             <option value="Coordenador">Coordenador</option>
 			<option value="Professor">Professor</option>
 			<option value="Secretario">Secretário</option>

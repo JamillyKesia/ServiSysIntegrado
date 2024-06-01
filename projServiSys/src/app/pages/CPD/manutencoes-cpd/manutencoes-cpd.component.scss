@@ -19,6 +19,148 @@
         }
     }
 
+    margin-top: 30px;
+    margin-left: 50px;
+    display: inline;
+
+    button{
+      margin-bottom: 40px;
+      width: 170px;
+      height: 53px;
+      border-radius: 37.5px;
+      border: 1px solid #455A64;
+      background-color: #455A64;
+      color: $branco;
+    }
+
+    .selecionado {
+      background-color: $cor-botao;
+      color: $hover-bt;
+    }
+
+    .selecionado:hover {
+        background-color: $cor-botao;
+        color: $verde-escuro;
+    }
+
+  //acertar detalhes
+    button:hover{ 
+        color: $branco;
+        border: 1px solid $branco;
+        text-decoration: none;
+        border-radius: 37.5px;
+        //line-height: 30px;
+        text-align: center;
+    }
+
+    .suas-ordens{
+        margin: 0px 50px;
+    
+        table {
+            border-collapse: separate;
+            width: 100%;
+            border: 1px solid $cor-linha;
+            border-radius: 7px;
+            padding: 5px 0px;
+        }
+        
+        td {
+            border: none;
+            text-align: center;
+            padding: 12px 0px;
+            border-bottom: 1px solid $cor-linha;
+            background-color: $branco;
+        }
+    
+        thead td{
+            font-weight: 600;
+            color: #022916;
+            padding: 20px 0px;
+        }
+    
+        tr{
+            padding-left: 40px;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    
+        button{
+            border: 1px solid $button-tabela;
+            background-color: $button-tabela;
+            border-radius: 40px;
+            color: $branco;
+            width: 80px;
+            height: 40px;
+        }
+    
+        .id{
+            color: $id-tabela;
+        }
+    
+        .data{
+            color: $data-tabela;
+        }
+    
+        .green-background{
+            //width: 10px;
+            width: 179px;
+            height: 5px;
+            padding: 2px;
+            border-radius: 38px;
+            border: 1px solid $green-os;
+            text-align: center;
+        }
+    
+        .yellow-background{
+            width: 179px;
+            height: 5px;
+            padding: 2px;
+            border-radius: 38px;
+            border: 1px solid $yellow-os;
+            text-align: center;
+        }
+    
+        .red-background{
+            width: 179px;
+            height: 5px;
+            padding: 2px;
+            border-radius: 38px;
+            border: 1px solid $vermelho;
+            text-align: center;
+        }
+    
+        .bolinha {
+            display: inline-block; /* Para a bolinha ficar ao lado do texto */
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        
+            .red-ball{
+                background-color: $vermelho;
+                width: 5%;
+                border-radius: 38px;
+                border: 1px solid $vermelho;
+            }
+    
+            .yellow-ball{
+                background-color: $yellow-os;
+                width: 5%;
+                border-radius: 38px;
+                border: 1px solid $yellow-os;
+            }
+    
+            .green-ball{
+                background-color: $green-os;
+             //   width: 5%;
+                border-radius: 38px;
+                border: 1px solid $green-os;
+            }
+        
+        }
+    }
 
 
 }

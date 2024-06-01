@@ -2,26 +2,17 @@
     <p>Nessa página você encontra suas requisições de ordens de serviço</p>
 </div>
 
-<app-botao-filtro 
-    descricao="Todas as ordens"
-    [routerLink]="'/principal/home-coord'"
-    [selecionado]="botaoSelecionado === 1"
-    >
-</app-botao-filtro><!--(clicked)="selecionarBotao(1)"-->
+<button type="button" [routerLink]="'/principal/home-coord'">
+  Todas as ordens
+</button>
 
-<app-botao-filtro
-    [descricao]="'Concluídas'" 
-    [routerLink]="'/principal/registration'"
-    [selecionado]="botaoSelecionado === 2"
->
-</app-botao-filtro>
+<button type="button" [routerLink]="'/principal/registration'">
+  Concluídas
+</button>
 
-<app-botao-filtro  
-    [descricao]="'Rejeitadas'"
-    [routerLink]="'/principal/aprovacoes'"
-    [selecionado]="botaoSelecionado === 3"
->
-</app-botao-filtro>
+<button type="button" [routerLink]="'/principal/aprovacoes'">
+  Rejeitadas
+</button>
 
 <div class="suas-ordens">
     <table>
@@ -45,7 +36,8 @@
 
                 <td class="data">{{ ordem.dataOrdemServico }}</td>
                 
-                <td><button  (click)="openModel2()">{{ ordem }}</button></td> <!--ordem.bt-->
+                <td><button  (click)="openModel2()"> Ver
+                </button></td> <!--ordem.bt-->
 
             </tr>
         </tbody>

@@ -100,6 +100,7 @@ export class NovaOrdemFuncComponent {
   // closeModal(): void {
   //   this.modalSwitch = false;
   // }
+  
 
 
 }

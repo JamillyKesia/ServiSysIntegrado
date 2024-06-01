@@ -47,12 +47,13 @@
         overflow: hidden; /* Esconde conteúdo que extrapola os limites da div */
     }
     
-    .group-tipo,
+    .group-posicao,
     .group-serial {
         margin-top: 30px;
     }
     
-    .group-serial, .group-posicao {
+    .group-tipo,
+    .group-serial {
         margin-left: 20px;
     }
     
@@ -84,11 +85,11 @@
     }
     
     #local {
-        width: 63em;
+        width: 40em;
     }
     
     #tipo {
-        width: 25em; 
+        width: 21em; 
     }
     
     #posicao {
@@ -126,8 +127,9 @@
         background-color: $verde-frase;
         color: $branco;
         margin-left: 83%; /* Alinha o botão à direita */
-       // margin-top: 1rem; /* Espaçamento entre o botão e o formulário */
+        margin-top: 20px; /* Espaçamento entre o botão e o formulário */
     }
+    
     
     
 }

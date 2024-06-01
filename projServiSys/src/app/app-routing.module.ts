@@ -17,7 +17,7 @@ export const AppRotas: Routes = [
   }/*,
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then(X => X.LoginModule)
+    loadChildren: () => import('./pages/login/CPD/login.module').then(X => X.LoginModule)
   },
   {
     path: 'login',

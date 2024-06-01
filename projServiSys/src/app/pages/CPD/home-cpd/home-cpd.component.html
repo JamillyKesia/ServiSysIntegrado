@@ -2,4 +2,41 @@
     <span class="titulo-bv mt-15">Bem-vindo(a)!</span>
     <p>Confira suas aprovações de ordens de serviço no menu “Suas aprovações”. </p>
 </div>
-<app-tabela-ordens></app-tabela-ordens>
+
+<div class="suas-ordens">
+    <table>
+        <thead>
+        <tr>
+            <td>ID da ordem</td>
+            <td>Status da ordem</td>
+            <td>Data da atribuição</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody *ngIf="ordens && ordens.length">
+            <tr *ngFor="let ordem of ordensFiltradas "><!-- ordens$ | async-->
+
+                <td class="id">{{ ordem.id }}</td>
+
+                <td>
+                    {{ ordem.estadoOrdemServico }}
+                    <div class="bolinha"></div>
+                </td>
+
+                <td class="data">{{ ordem.dataOrdemServico }}</td>
+                
+                <td><button (click)="openModel2()"> Ver </button></td> <!--ordem.bt-->
+
+            </tr>
+        </tbody>
+        <tfoot *ngIf="!ordens.length">
+            <tr>
+                <td colspan="8">
+                    <h4>
+                        Nenhuma ordem encontrada!
+                    </h4>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

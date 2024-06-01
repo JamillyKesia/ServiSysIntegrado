@@ -4,8 +4,6 @@ export interface User {
     id: number;
     nomeLogin: string;
     nomeUsuario: string;
-    inativaUsuario: boolean;
-    dataAlteracaoInatividade: Date;
     cargo: CargoEnum;
     tipoUsuario: TipoUsuarioEnum;
     ordensDeServico?: OrdemServico[];
@@ -13,7 +11,7 @@ export interface User {
 
 enum TipoUsuarioEnum {
     Solicitante = 'Solicitante',
-    CoordenadorTI = 'Coordenador_TI',
+    CoordenadorTI = 'CoordenadorTI',
     Tecnico = 'Tecnico',
     Administrador = 'Administrador'
 }

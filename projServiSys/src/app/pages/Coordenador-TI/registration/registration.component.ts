@@ -41,7 +41,7 @@ export class RegistrationComponent implements OnInit {
       ],
       userName: ['', [
         Validators.required,
-        Validators.minLength(4),
+        Validators.minLength(3),
       ]],
       password: ['', [
         Validators.required,
@@ -51,7 +51,7 @@ export class RegistrationComponent implements OnInit {
       confirmePassword: ['', [
         Validators.required
       ]],
-      tipoUser: ['', Validators.required],
+      tipoUsuario: ['', Validators.required],
       cargo: ['', Validators.required]
     }, formOptions);
   }
@@ -63,7 +63,7 @@ export class RegistrationComponent implements OnInit {
   register(): void {
     this.user = { ... this.form.value }
     this.accountService.register(this.user).subscribe(
-      () => this.router.navigateByUrl('/principal/home-cpd')
+      () => this.router.navigateByUrl('/principal/home-coord')
       //(error: any) => this.toaster.error(error.error);
     )
   }

@@ -70,4 +70,6 @@ export class HomeComponent {
       error: (error:any) => console.log(error)
     });
   }
+
+  
 }

@@ -2,7 +2,6 @@ import { NgModule, TemplateRef } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
-import { TabelaOrdensComponent } from './../../components/tabela-ordens/tabela-ordens.component';
 import { BotaoMenuComponent } from "src/app/components/botao-menu/botao-menu.component"; 
 import { MenuLateralComponent } from "src/app/components/menu-lateral/menu-lateral.component";
 import { MenuSuperiorComponent } from "src/app/components/menu-superior/menu-superior.component";
@@ -10,9 +9,7 @@ import { HomeComponent } from "../funcionario/home/home.component";
 import { TelaPrincipalRotas } from "./tela-principal.routes";
 import { TelaPrincipalComponent } from "./tela-principal.component";
 import { NovaOrdemFuncComponent } from '../funcionario/nova-ordem-func/nova-ordem-func.component';
-import { FormNovaOsComponent } from 'src/app/components/form-nova-os/form-nova-os.component';
 import { SuasOrdensFuncComponent } from "../funcionario/suas-ordens-func/suas-ordens-func.component";
-import { BotaoFiltroComponent } from "src/app/components/botao-filtro/botao-filtro.component";
 import { ModalOsComponent } from "src/app/components/modal-os/modal-os.component";
 import { ModalComponent } from "src/app/components/modal/modal.component";
 import { HomeCpdComponent } from "../CPD/home-cpd/home-cpd.component";
@@ -42,11 +39,8 @@ import { RegistrationComponent } from "../Coordenador-TI/registration/registrati
         MenuLateralComponent,
         MenuSuperiorComponent,
         HomeComponent,
-        TabelaOrdensComponent,
         NovaOrdemFuncComponent,
-        FormNovaOsComponent,
         SuasOrdensFuncComponent,
-        BotaoFiltroComponent,
         ModalComponent,
         ModalOsComponent,
         DateTimeFormatPipe,

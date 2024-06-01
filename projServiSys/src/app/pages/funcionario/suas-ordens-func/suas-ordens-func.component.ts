@@ -1,5 +1,5 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
-import { BotaoFiltroComponent } from 'src/app/components/botao-filtro/botao-filtro.component';
 import { OrdemServico } from 'src/app/models/ordem-servico';
 import { OrdemService } from 'src/app/services/ordem.service';
 import { SwitchService } from 'src/app/services/switch.service';
@@ -36,16 +36,6 @@ export class SuasOrdensFuncComponent implements OnInit {
     this.ordensFiltradas = this.filtroLista ? this.filtrarOrdens(this.filtroLista) : this.ordens;
   }
 
-  // public filtrarOrdens(filtrarPor: string):any{
-  //   filtrarPor = filtrarPor.toLocaleLowerCase();
-  //   return this.ordens.filter( //o tema é oq vc vai filtrar, mudar pelo certo
-  //   ordem.id.toLocaleLowerCase().indexOf(filtrarPor) !== -1 || 
-  //   ordem.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1
-  //     //(ordem: { tema: string; }) => ordem.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1 
-  //     //||
-  //     //ordem.local.toLocaleLowerCase().indexOf(filtrarPor) !== -1
-  //   );
-  // }
 
   public filtrarOrdens(filtrarPor: string): OrdemServico[] {
     filtrarPor = filtrarPor.toLocaleLowerCase();
@@ -55,7 +45,8 @@ export class SuasOrdensFuncComponent implements OnInit {
   }
 
   constructor(private modalSS: SwitchService,
-    private ordemService: OrdemService) { }
+    private ordemService: OrdemService
+  ) { }
 
   ngOnInit(): void {
     this.modalSS.$modal.subscribe((valor) => {this.modalSwitch = valor}); 
@@ -91,15 +82,15 @@ export class SuasOrdensFuncComponent implements OnInit {
     return this.ordens.filter(ordem => ordem.status === 'Rejeitado');
   }*/
 
-  // Método para ativar o botão
+  /*// Método para ativar o botão
   activeButton(botao: BotaoFiltroComponent): void {
     botao.activeButton();
   }
 
   // Método para definir o estado do botão (ativo/desativado)
-  setActiveButton(botao: BotaoFiltroComponent, status: boolean): void {
+  setActiveButton(botao: Suas, status: boolean): void {
     botao.setActiveButton(status);
-  }
+  }*/
 
   public openModel2(){
     this.modalSwitch = true;
@@ -114,5 +105,6 @@ export class SuasOrdensFuncComponent implements OnInit {
       error: (error:any) => console.log(error)
     });
   }
+  
   
 }

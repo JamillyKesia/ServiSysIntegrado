@@ -1,8 +1,54 @@
 <div class="txt-os">
     <p>Nessa página você encontra suas requisições de ordens de serviço</p>
 </div>
-<app-botao-filtro  [descricao]="'Todas as ordens'"></app-botao-filtro>
-<app-botao-filtro  [descricao]="'Concluídas'" ></app-botao-filtro>
-<app-botao-filtro  [descricao]="'Em andamento'"></app-botao-filtro>
-<app-tabela-ordens></app-tabela-ordens>
+
+<button type="button" [routerLink]="'/principal/home-coord'">
+    Todas as ordens
+  </button>
+  
+  <button type="button" [routerLink]="'/principal/registration'">
+    Concluídas
+  </button>
+  
+  <button type="button" [routerLink]="'/principal/aprovacoes'">
+    Rejeitadas
+  </button>
+
+  <div class="suas-ordens">
+    <table>
+        <thead>
+        <tr>
+            <td>ID da ordem</td>
+            <td>Status da ordem</td>
+            <td>Data da atribuição</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody *ngIf="ordens && ordens.length">
+            <tr *ngFor="let ordem of ordensFiltradas "><!-- ordens$ | async-->
+
+                <td class="id">{{ ordem.id }}</td>
+
+                <td>
+                    {{ ordem.estadoOrdemServico }}
+                    <div class="bolinha"></div>
+                </td>
+
+                <td class="data">{{ ordem.dataOrdemServico }}</td>
+                
+                <td><button (click)="openModel2()"> Ver </button></td> <!--ordem.bt-->
+
+            </tr>
+        </tbody>
+        <tfoot *ngIf="!ordens.length">
+            <tr>
+                <td colspan="8">
+                    <h4>
+                        Nenhuma ordem encontrada!
+                    </h4>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
 
