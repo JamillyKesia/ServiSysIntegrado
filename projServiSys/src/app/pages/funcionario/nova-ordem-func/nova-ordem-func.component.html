@@ -24,6 +24,16 @@
 			</div>
         </div>
 
+        <div class="group-local">
+            <label>Posição do equipamento*</label>
+            <input type="text" class="form-control" id="posicao"
+            [ngClass]="cssValidator(fn.posicaoEquipamento)" 
+            formControlName="posicaoEquipamento">
+            <div *ngIf="fn.posicaoEquipamento.errors?.required && fn.posicaoEquipamento.touched" class="invalid-feedback">
+				Local do equipamento é obrigatório.
+			</div>
+        </div>
+
         <div class="group-serial">
             <label>Serial do equipamento*</label>
             <input class="form-control" type="text" id="serial"

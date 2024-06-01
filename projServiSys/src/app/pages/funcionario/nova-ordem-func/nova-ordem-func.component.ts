@@ -19,6 +19,7 @@ export class NovaOrdemFuncComponent {
   //ordens = new Observable<OrdemServico[]>();
 
   ordens = {} as OrdemServico;
+  modalMessage: string = '';
 
   //ordens  : Ordem[] = []
   //get f(): any { return this.form.controls; }
@@ -43,6 +44,7 @@ export class NovaOrdemFuncComponent {
       localEquipamento: ['', Validators.required],
       tipoEquipamento: ['', Validators.required],
       serialEquipamento: ['',[Validators.required, Validators.minLength(4)]],
+      posicaoEquipamento: ['', Validators.required],
       descricaoProblema: ['', [Validators.required]],
     });
   }
@@ -58,22 +60,25 @@ export class NovaOrdemFuncComponent {
   //salvar ordens com api
   public salvarAlteracao(): void {
     if(this.formNO.valid){
+      console.log('Entrei no if');
 
       this.ordens = {... this.formNO.value};
 
       this.ordemService.PostOrdemServico(this.ordens).subscribe(
         () => {
-        //this.modalMessage = 'Evento salvo com sucesso!';
+        this.modalMessage = 'Evento salvo com sucesso!';
         this.openModal();
         },
         (error: any) =>{
           console.error(error);
-          //this.modalMessage = 'Erro ao salvar evento';
+          this.modalMessage = 'Erro ao salvar evento';
           this.openModal(); //fazer modal de erro
         }
+
+        
       );
 
-      this.ordemService.PutOrdemServico(this.ordens.id, this.ordens).subscribe(
+      /*this.ordemService.PutOrdemServico(this.ordens.id, this.ordens).subscribe(
         () => {
         //this.modalMessage = 'Evento salvo com sucesso!';
         this.openModal();
@@ -83,7 +88,7 @@ export class NovaOrdemFuncComponent {
           //this.modalMessage = 'Erro ao salvar evento';
           this.openModal();
         }
-      );
+      );*/
 
     }
   }

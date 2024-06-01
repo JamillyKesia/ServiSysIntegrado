@@ -1,5 +1,4 @@
 import { OrdemServico } from "./ordem-servico";
-//import { CargoEnum }
 
 export interface User {
     id: number;
@@ -12,3 +11,19 @@ export interface User {
     ordensDeServico?: OrdemServico[];
 }
 
+enum TipoUsuarioEnum {
+    Solicitante = 'Solicitante',
+    CoordenadorTI = 'Coordenador_TI',
+    Tecnico = 'Tecnico',
+    Administrador = 'Administrador'
+}
+
+enum CargoEnum {
+    Diretor = 'Diretor',
+    Coordenador = 'Coordenador',
+    Professor = 'Professor',
+    Secretario = 'Secretario',
+    OrientadorEducacional = 'OrientadorEducacional',
+    TecnicoInformatica = 'TecnicoInformatica',
+    CoordenadorTI = 'CoordenadorTI'
+}

@@ -1,6 +1,6 @@
 <!--REGISTRATION FORM-->
 
-<form [formGroup]="form" class="p-1">
+<form [formGroup]="form" class="p-1" (ngSubmit)="register()">
 	<div class="pb-2 d-block d-md-none">
 		<h3 class="border-bottom">Cadastro de Novo Usuário</h3>
 	</div>
@@ -19,7 +19,7 @@
 			</div>  
         </div>
 		<div class="fg nome">
-			<label>Primeiro Nome</label>
+			<label>Primeiro Nome:</label>
 			<input type="text" class="form-control" 
 			formControlName="primeiroNome"
 			[ngClass]="cssValidator(f.primeiroNome)" 
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<div class="fg nome">
-			<label>Último nome</label>
+			<label>Último nome:</label>
 			<input type="text" class="form-control"
 			formControlName="ultimoNome"
 			[ngClass]="cssValidator(f.ultimoNome)" 
@@ -58,28 +58,28 @@
 		<div class="fg senha">
 			<label for="">Senha:</label>
 			<input class="form-control" type="password" 
-			formControlName="senha"
-			[ngClass]="cssValidator(f.senha)" 
+			formControlName="password"
+			[ngClass]="cssValidator(f.password)" 
 			placeholder="Digite uma Senha" />
-			<div *ngIf="f.senha.errors?.required && f.senha.touched" class="invalid-feedback">
+			<div *ngIf="f.password.errors?.required && f.password.touched" class="invalid-feedback">
 				Senha é obrigatória.
 			</div>
-			<div *ngIf="f.senha.errors?.minlength && f.senha.touched" class="invalid-feedback">
+			<div *ngIf="f.password.errors?.minlength && f.password.touched" class="invalid-feedback">
 				A senha deve conter no mínimo 6 caracteres.
 			</div>
-			<div *ngIf="f.senha.errors?.maxlength && f.senha.touched" class="invalid-feedback">
+			<div *ngIf="f.password.errors?.maxlength && f.password.touched" class="invalid-feedback">
 				A senha deve ter no máximo 8 caracteres.
 			</div>
 		</div>
 		<div class="fg senha">
 			<label for="">Confirmar Senha:</label>
 			<input class="form-control" type="password"
-			[ngClass]="cssValidator(f.confirmeSenha)" 
-			formControlName="confirmeSenha"  placeholder="Confirme a Senha" />
-			<div *ngIf="f.confirmeSenha.errors?.required && f.confirmeSenha.errors && f.confirmeSenha.touched" class="invalid-feedback">
+			[ngClass]="cssValidator(f.confirmePassword)" 
+			formControlName="confirmePassword"  placeholder="Confirme a Senha" />
+			<div *ngIf="f.confirmePassword.errors?.required && f.confirmePassword.errors && f.confirmePassword.touched" class="invalid-feedback">
 				Confirmar Senha é obrigatório.
 			</div>
-			<div *ngIf="f.confirmeSenha.errors?.mustMatch" class="invalid-feedback">
+			<div *ngIf="f.confirmePassword.errors?.mustMatch" class="invalid-feedback">
 				Repetir a senha Senha é obrigatório.
 			</div>
 		</div>
@@ -92,11 +92,11 @@
 		name="tipoUser" placeholder="Escolha o tipo de Usuário" >
             <option value="" disabled selected hidden></option>
             <option value="Solicitante">Solicitante</option>
-            <option value="Coordenador_TI">Coordenador de TI</option>
+            <option value="CoordenadorTI">Coordenador de TI</option>
 			<option value="Tecnico">Técnico</option>
 			<option value="Administrador">Administrador</option>
         </select>
-		<div *ngIf="f.tipoUser.errors && f.tipoUser.touched" class="invalid-feedback">
+		<div *ngIf="f.tipoUser.errors?.required && f.tipoUser.touched" class="invalid-feedback">
 			Tipo de Usuário é obrigatório.
 		</div>
     </div>
@@ -115,13 +115,13 @@
 			<option value="TecnicoInformatica">Técnico de Informática</option>
 			<option value="CoordenadorTI">Coordenador de TI</option>
         </select>
-		<div *ngIf="f.cargo.errors && f.cargo.touched" class="invalid-feedback">
+		<div *ngIf="f.cargo.errors?.required && f.cargo.touched" class="invalid-feedback">
 			Cargo é obrigatório.
 		</div>
     </div>
 	<div class="form-row">
 		<div class="form-group col-12">
-			<button class="btn btn-lg btn-success btn-block px-5">
+			<button [disabled]="!form.valid" class="btn btn-lg btn-success btn-block px-5" type="submit">
 				Registar
 			</button>
 		</div>

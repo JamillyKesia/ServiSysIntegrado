@@ -14,8 +14,6 @@ import { FormNovaOsComponent } from 'src/app/components/form-nova-os/form-nova-o
 import { SuasOrdensFuncComponent } from "../funcionario/suas-ordens-func/suas-ordens-func.component";
 import { BotaoFiltroComponent } from "src/app/components/botao-filtro/botao-filtro.component";
 import { ModalOsComponent } from "src/app/components/modal-os/modal-os.component";
-//import { BotaoMenuCoordComponent } from "src/app/components/Coordenador-TI/botao-menu-coord/botao-menu-coord.component";
-//import { SolicitacaoComponent } from "src/app/components/Coordenador-TI/solicitacao/solicitacao.component";
 import { ModalComponent } from "src/app/components/modal/modal.component";
 import { HomeCpdComponent } from "../CPD/home-cpd/home-cpd.component";
 import { ManutencoesCpdComponent } from "../CPD/manutencoes-cpd/manutencoes-cpd.component";
@@ -27,10 +25,18 @@ import { SuasAprovacoesComponent } from "../Coordenador-TI/suas-aprovacoes/suas-
 import { AprovPendentesComponent } from "../Coordenador-TI/aprov-pendentes/aprov-pendentes.component";
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { CadastroAdminComponent } from "../Coordenador-TI/cadastro-admin/cadastro-admin.component";
 import { DateTimeFormatPipe } from "src/app/helpers/date-time-format.pipe";
+import { LoginComponent } from "../login/login.component";
+import { LoginCPDComponent } from "../login/CPD/login-cpd/login-cpd.component";
+import { LoginCoordenadorComponent } from "../login/Coordenador-TI/login-coordenador/login-coordenador.component";
+import { RegistrationComponent } from "../Coordenador-TI/registration/registration.component";
+
 @NgModule({
     declarations: [
+        LoginComponent,
+        LoginCPDComponent,
+        LoginCoordenadorComponent,
+
         TelaPrincipalComponent,
         BotaoMenuComponent,
         MenuLateralComponent,
@@ -50,7 +56,7 @@ import { DateTimeFormatPipe } from "src/app/helpers/date-time-format.pipe";
         SuasAprovacoesComponent, 
         BotaoMenuCoordComponent,
         SolicitacaoComponent,
-        CadastroAdminComponent,
+        RegistrationComponent,
 
         HomeCpdComponent,
         ManutencoesCpdComponent,
@@ -60,7 +66,7 @@ import { DateTimeFormatPipe } from "src/app/helpers/date-time-format.pipe";
         CommonModule,
         RouterModule.forChild(TelaPrincipalRotas),
         FormsModule,
-        ReactiveFormsModule // Se estiver usando reactive forms
+        ReactiveFormsModule
     ]
 })
 

@@ -1,4 +1,4 @@
-import { AccountService } from './../../services/account.service';
+import { AccountService } from '../../services/account.service';
 import { Component} from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
@@ -33,6 +33,7 @@ export class LoginComponent {
         (error: any) => {
           if (error.status == 401){
             //this.toaster.error('usuario invalido');
+            console.log('usuario invalido');
           }
           else console.error(error);
         }

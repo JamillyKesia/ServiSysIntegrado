@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjServiSysApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6c08e66511ee90e3000ce6244bb3ac6fab05f1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79434a6f11c46a580c4bd905b69539039bbe3df4")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjServiSysApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjServiSysApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

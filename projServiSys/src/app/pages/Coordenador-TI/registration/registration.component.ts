@@ -1,18 +1,25 @@
+import { AccountService } from '../../../services/account.service';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ValidatorField } from 'src/app/helpers/validator-field';
+import { User } from 'src/app/models/identity/user';
 
 
 @Component({
-  selector: 'app-cadastro-admin',
-  templateUrl: './cadastro-admin.component.html',
-  styleUrls: ['./cadastro-admin.component.scss']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.scss']
 })
-export class CadastroAdminComponent implements OnInit {
+export class RegistrationComponent implements OnInit {
   
+  user = {} as User;
   form!: FormGroup;
 
-  constructor(public fb: FormBuilder) { }
+  constructor(public fb: FormBuilder,
+              private accountService: AccountService,
+              private router: Router
+  ) { }
 
   get f(): any { return this.form.controls; }
 
@@ -23,7 +30,7 @@ export class CadastroAdminComponent implements OnInit {
   private validation(): void {
 
     const formOptions: AbstractControlOptions = {
-      validators: ValidatorField.MustMatch('senha', 'confirmeSenha')
+      validators: ValidatorField.MustMatch('password', 'confirmePassword')
     };
 
     this.form = this.fb.group({
@@ -36,12 +43,12 @@ export class CadastroAdminComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
       ]],
-      senha: ['', [
+      password: ['', [
         Validators.required,
         Validators.minLength(6),
         Validators.maxLength(8)
       ]],
-      confirmeSenha: ['', [
+      confirmePassword: ['', [
         Validators.required
       ]],
       tipoUser: ['', Validators.required],
@@ -51,6 +58,14 @@ export class CadastroAdminComponent implements OnInit {
 
   public cssValidator(campoForm: FormControl): any {
     return {'is-invalid': campoForm.errors && campoForm.touched};
+  }
+
+  register(): void {
+    this.user = { ... this.form.value }
+    this.accountService.register(this.user).subscribe(
+      () => this.router.navigateByUrl('/principal/home-cpd')
+      //(error: any) => this.toaster.error(error.error);
+    )
   }
 
 }

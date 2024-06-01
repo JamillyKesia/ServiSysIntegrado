@@ -13,7 +13,7 @@ import { SuasAprovacoesComponent } from "../Coordenador-TI/suas-aprovacoes/suas-
 import { authFuncionarioGuard } from "src/app/_guard/auth-funcionario.guard";
 import { authCoordGuard } from "src/app/_guard/auth-coord.guard";
 import { authCpdGuard } from "src/app/_guard/auth-cpd.guard";
-import { CadastroAdminComponent } from "../Coordenador-TI/cadastro-admin/cadastro-admin.component";
+import { RegistrationComponent } from "../Coordenador-TI/registration/registration.component";
 
 //import { autorizadoGuard } from "src/app/_guard/autorizado.guard";
 
@@ -47,8 +47,8 @@ export const TelaPrincipalRotas: Routes = [
                 data: { tipoUsuario: 'coordenador' }
             },
             {
-                path:'adm-coord',
-                component: CadastroAdminComponent,
+                path:'registration',
+                component: RegistrationComponent,
                 //canActivate: [authCoordGuard],
                 data: { tipoUsuario: 'coordenador' }
             },

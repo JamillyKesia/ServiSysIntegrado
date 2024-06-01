@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CadastroAdminComponent } from './cadastro-admin.component';
+import { RegistrationComponent } from './registration.component';
 
 describe('CadastroAdminComponent', () => {
-  let component: CadastroAdminComponent;
-  let fixture: ComponentFixture<CadastroAdminComponent>;
+  let component: RegistrationComponent;
+  let fixture: ComponentFixture<RegistrationComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CadastroAdminComponent]
+      declarations: [RegistrationComponent]
     });
-    fixture = TestBed.createComponent(CadastroAdminComponent);
+    fixture = TestBed.createComponent(RegistrationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

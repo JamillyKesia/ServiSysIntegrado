@@ -10,9 +10,9 @@ export interface OrdemServico {
     localEquipamento: string;
     tipoEquipamento: string;
     serialEquipamento: string;
+    posicaoEquipamento: string
     estadoOrdemServico: EstadoOrdemServicoEnum;
     userId: number;
     user: User;
-    //ordemEquipamentos?: OrdemEquipamento[];
-    //lancamentos?: Lancamento[];
+
 }
