@@ -14,6 +14,7 @@ import { authFuncionarioGuard } from "src/app/_guard/auth-funcionario.guard";
 import { authCoordGuard } from "src/app/_guard/auth-coord.guard";
 import { authCpdGuard } from "src/app/_guard/auth-cpd.guard";
 import { RegistrationComponent } from "../Coordenador-TI/registration/registration.component";
+import { ModalOsComponent } from "src/app/components/modal-os/modal-os.component";
 
 //import { autorizadoGuard } from "src/app/_guard/autorizado.guard";
 
@@ -82,6 +83,10 @@ export const TelaPrincipalRotas: Routes = [
                 //canActivate: [authCpdGuard],
                 data: { tipoUsuario: 'cpd' }
             },
+            { 
+                path: 'modal-os',
+                component: ModalOsComponent },
+
             {
                 path: '**',
                 redirectTo: 'home'

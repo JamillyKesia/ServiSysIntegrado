@@ -26,6 +26,7 @@ import { LoginComponent } from "../login/login.component";
 import { LoginCPDComponent } from "../login/CPD/login-cpd/login-cpd.component";
 import { LoginCoordenadorComponent } from "../login/Coordenador-TI/login-coordenador/login-coordenador.component";
 import { RegistrationComponent } from "../Coordenador-TI/registration/registration.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -58,7 +59,8 @@ import { RegistrationComponent } from "../Coordenador-TI/registration/registrati
         CommonModule,
         RouterModule.forChild(TelaPrincipalRotas),
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ]
 })
 

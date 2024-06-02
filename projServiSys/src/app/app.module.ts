@@ -9,8 +9,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AccountService } from './services/account.service';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
-//import { DateTimeFormatPipe } from './helpers/date-time-format.pipe';
-
 
 
 @NgModule({

@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OrdemServico } from 'src/app/models/ordem-servico';
 import { SwitchService } from 'src/app/services/switch.service';
-
+import { OrdemCompartilhadaService } from 'src/app/services/ordem-compartilhada.service';
 
 @Component({
   selector: 'app-modal-os',
@@ -12,17 +12,23 @@ import { SwitchService } from 'src/app/services/switch.service';
 })
 export class ModalOsComponent {
 
-  //ordem = {} as OrdemServico;
-  @Input() ordem: OrdemServico | any = {};
+  ordens = {} as OrdemServico;
+  //@Input() ordem: OrdemServico | any = {};
 
   constructor(
     private modalSS: SwitchService,
     private router: ActivatedRoute,
-    private ordemService: OrdemService
+    private ordemService: OrdemService,
+    private ordemCompartilhadaService: OrdemCompartilhadaService
   ) { }
 
   ngOnInit(): void{
     this.carregarOrdem();
+    this.ordemCompartilhadaService.ordemAtual.subscribe(ordens => {
+      if (ordens) {
+        this.ordens = ordens;
+      }
+    });
   }
 
   closeModal2(){
@@ -36,9 +42,8 @@ export class ModalOsComponent {
   
     if (ordemIdParam !== null){
       this.ordemService.GetOrdemServicoById(+ordemIdParam).subscribe(
-        (ordem: OrdemServico) => {
-          this.ordem = {... ordem}; //pega as propriedades do obj OrdemServico e atribui os itens pra ordem
-          //this.modal.patchValue(this.ordem);
+        (ordens: OrdemServico) => {
+          this.ordens = {... ordens}; //pega as propriedades do obj OrdemServico e atribui os itens pra ordem
         },
         (error: any) => {
           console.error(error);

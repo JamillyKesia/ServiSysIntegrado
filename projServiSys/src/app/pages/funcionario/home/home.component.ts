@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OrdemServico } from 'src/app/models/ordem-servico';
 import { OrdemService } from 'src/app/services/ordem.service';
 import { SwitchService } from 'src/app/services/switch.service';
+import { OrdemCompartilhadaService } from 'src/app/services/ordem-compartilhada.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent {
   public ordensFiltradas: OrdemServico[] = [];
 
   private _filtrosListado: string = '';
-  router: any;
+  
 
   public get filtroLista(): string{
     return this._filtrosListado;
@@ -46,10 +47,10 @@ export class HomeComponent {
   }
   
   constructor(
-
-    private modalSS: SwitchService,
-    private ordemService: OrdemService,
-    router: Router) {
+      private modalSS: SwitchService,
+      private ordemService: OrdemService,
+      private ordemCompartilhadaService: OrdemCompartilhadaService
+  ) {
       // console.log('TO AQUI', environment.api)
       //this.obterOrdensCadastradas();
   }
@@ -60,8 +61,11 @@ export class HomeComponent {
   }
 
   public openModel2(id: number){
-    this.modalSwitch = true;
-    this.router.navigate(['/principal/', id]);
+    const ordem = this.ordens.find(o => o.id === id);
+    if (ordem) {
+      this.ordemCompartilhadaService.mudarOrdem(ordem);
+      this.modalSwitch = true;
+    }
   }
 
   public GetOrdemServico(): void {

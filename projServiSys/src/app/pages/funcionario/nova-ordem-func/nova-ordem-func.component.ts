@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ValidatorField } from 'src/app/helpers/validator-field';
+import { EstadoOrdemServicoEnum } from 'src/app/models/Enum/estado-ordem-servico-enum';
 import { OrdemServico } from 'src/app/models/ordem-servico';
 import { OrdemService } from 'src/app/services/ordem.service';
 import { SwitchService } from 'src/app/services/switch.service';
+import { OrdemCompartilhadaService } from 'src/app/services/ordem-compartilhada.service';
 
 @Component({
   selector: 'app-nova-ordem-func',
@@ -27,7 +29,8 @@ export class NovaOrdemFuncComponent {
   constructor(
   private modalSS: SwitchService,
   private ordemService: OrdemService,
-  private fb: FormBuilder) {}
+  private fb: FormBuilder,
+  private ordemCompartilhadaService: OrdemCompartilhadaService) {}
 
   ngOnInit(): void{
     this.modalSS.$modal.subscribe((valor) => {this.modalSwitch = valor}); 
@@ -46,6 +49,7 @@ export class NovaOrdemFuncComponent {
       serialEquipamento: ['',[Validators.required, Validators.minLength(4)]],
       posicaoEquipamento: ['', Validators.required],
       descricaoProblema: ['', [Validators.required]],
+      estadoOrdemServico: [EstadoOrdemServicoEnum.EmAnalise, Validators.required]
     });
   }
 
@@ -60,10 +64,9 @@ export class NovaOrdemFuncComponent {
   //salvar ordens com api
   public salvarAlteracao(): void {
     if(this.formNO.valid){
-      console.log('Entrei no if');
 
       this.ordens = {... this.formNO.value};
-
+      this.ordemCompartilhadaService.mudarOrdem(this.ordens);
       this.ordemService.PostOrdemServico(this.ordens).subscribe(
         () => {
         this.modalMessage = 'Evento salvo com sucesso!';
@@ -96,11 +99,5 @@ export class NovaOrdemFuncComponent {
   openModal(){
     this.modalSwitch = true;
   }
-
-  // closeModal(): void {
-  //   this.modalSwitch = false;
-  // }
-  
-
 
 }
