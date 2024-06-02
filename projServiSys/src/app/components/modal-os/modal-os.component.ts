@@ -34,7 +34,6 @@ export class ModalOsComponent {
   public carregarOrdem(): void {
     const ordemIdParam = this.router.snapshot.paramMap.get('id');
   
-
     if (ordemIdParam !== null){
       this.ordemService.GetOrdemServicoById(+ordemIdParam).subscribe(
         (ordem: OrdemServico) => {
@@ -48,5 +47,4 @@ export class ModalOsComponent {
       )
     }
   }
-
 }

@@ -22,7 +22,6 @@ import { SuasAprovacoesComponent } from "../Coordenador-TI/suas-aprovacoes/suas-
 import { AprovPendentesComponent } from "../Coordenador-TI/aprov-pendentes/aprov-pendentes.component";
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { DateTimeFormatPipe } from "src/app/helpers/date-time-format.pipe";
 import { LoginComponent } from "../login/login.component";
 import { LoginCPDComponent } from "../login/CPD/login-cpd/login-cpd.component";
 import { LoginCoordenadorComponent } from "../login/Coordenador-TI/login-coordenador/login-coordenador.component";
@@ -43,7 +42,6 @@ import { RegistrationComponent } from "../Coordenador-TI/registration/registrati
         SuasOrdensFuncComponent,
         ModalComponent,
         ModalOsComponent,
-        DateTimeFormatPipe,
         
         HomeCoordComponent,
         AprovPendentesComponent,
